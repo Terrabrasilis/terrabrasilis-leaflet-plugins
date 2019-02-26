@@ -1,0 +1,40 @@
+{
+  "name": "terrabrasilis-leaflet-plugins",
+  "version": "0.0.1",
+  "description": "A set Leaflet plugins for easy supply TerraBrasilis dependencies",
+  "main": "dist/terrabrasilis-leaflet-plugins.min.js",
+  "style": "dist/terrabrasilis-leaflet-plugins.min.css",
+  "scripts": {
+    "cleandist": "rm dist/*",
+    "compressjs": "node_modules/uglify-js/bin/uglifyjs src/js/*.js >> dist/terrabrasilis-leaflet-plugins.min.js",
+    "compresscss": "node_modules/uglifycss/uglifycss src/css/*.css >> dist/terrabrasilis-leaflet-plugins.min.css",
+    "build": "npm run cleandist && npm run compressjs && npm run compresscss"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Terrabrasilis/terrabrasilis-leaflet-plugins.git"
+  },
+  "keywords": [
+    "leaflet",
+    "terrabrasilis",
+    "plugins",
+    "control.custom",
+    "contextmenu",
+    "fullscreen",
+    "zoombox",
+    "draw",
+    "html-legend",
+    "styled.layer.control",
+    "coordinates"
+  ],
+  "author": "André Carvalho",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Terrabrasilis/terrabrasilis-leaflet-plugins/issues"
+  },
+  "homepage": "https://terrabrasilis.dpi.inpe.br",
+  "devDependencies": {
+    "uglify-js": "^2.7.4",
+    "uglifycss": "^0.0.25"
+  }
+}
