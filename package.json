@@ -1,11 +1,11 @@
 {
-  "name": "terrabrasilis-leaflet-plugins",
+  "name": "terrabrasilis-map-plugins",
   "version": "0.0.1",
   "description": "A set Leaflet plugins for easy supply TerraBrasilis dependencies",
   "main": "dist/terrabrasilis-leaflet-plugins.min.js",
   "style": "dist/terrabrasilis-leaflet-plugins.min.css",
   "scripts": {
-    "cleandist": "rm dist/*",
+    "cleandist": "rm dist/*.*",
     "compressjs": "node_modules/uglify-js/bin/uglifyjs src/js/*.js >> dist/terrabrasilis-leaflet-plugins.min.js",
     "compresscss": "node_modules/uglifycss/uglifycss src/css/*.css >> dist/terrabrasilis-leaflet-plugins.min.css",
     "build": "npm run cleandist && npm run compressjs && npm run compresscss"
@@ -36,5 +36,8 @@
   "devDependencies": {
     "uglify-js": "^2.7.4",
     "uglifycss": "^0.0.25"
+  },
+  "dependencies": {
+    "esri-leaflet-geocoder": "^2.2.13"
   }
 }
