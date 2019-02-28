@@ -1,6 +1,6 @@
 {
   "name": "terrabrasilis-map-plugins",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A set Leaflet plugins for easy supply TerraBrasilis dependencies",
   "main": "dist/terrabrasilis-leaflet-plugins.min.js",
   "style": "dist/terrabrasilis-leaflet-plugins.min.css",
