@@ -8,7 +8,8 @@
     "cleandist": "node_modules/.bin/rimraf dist && mkdir dist",
     "compressjs": "node_modules/uglify-js/bin/uglifyjs src/js/*.js >> dist/terrabrasilis-leaflet-plugins.min.js",
     "compresscss": "node_modules/uglifycss/uglifycss src/css/*.css >> dist/terrabrasilis-leaflet-plugins.min.css",
-    "build": "npm run cleandist && npm run compressjs && npm run compresscss"
+    "build": "npm run cleandist && npm run compressjs && npm run compresscss",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",

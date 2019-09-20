@@ -114,14 +114,14 @@ L.Control.Coordinates = L.Control.extend({
     var x = L.NumberFormatter.createValidNumber(this._inputX.value, this.options.decimalSeperator)
     var y = L.NumberFormatter.createValidNumber(this._inputY.value, this.options.decimalSeperator)
     if (x !== undefined && y !== undefined) {
-      var marker = this._marker
-      if (!marker) {
-        marker = this._marker = this._createNewMarker()
-        marker.on('click', this._clearMarker, this)
-      }
+      // var marker = this._marker
+      // if (!marker) {
+      //   marker = this._marker = this._createNewMarker()
+      //   marker.on('click', this._clearMarker, this)
+      // }
       var ll = new L.LatLng(y, x)
-      marker.setLatLng(ll)
-      marker.addTo(this._map)
+      // marker.setLatLng(ll)
+      // marker.addTo(this._map)
       if (this.options.centerUserCoordinates) {
         this._map.setView(ll, this._map.getZoom())
       }
