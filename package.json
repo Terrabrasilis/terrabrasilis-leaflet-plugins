@@ -8,7 +8,7 @@
     "cleandist": "node_modules/.bin/rimraf dist && mkdir dist",
     "compressjs": "node_modules/uglify-js/bin/uglifyjs src/js/*.js >> dist/terrabrasilis-leaflet-plugins.min.js",
     "compresscss": "node_modules/uglifycss/uglifycss src/css/*.css >> dist/terrabrasilis-leaflet-plugins.min.css",
-    "build": "npm run cleandist && npm run compressjs && npm run compresscss"
+    "build-all": "npm run cleandist && npm run compressjs && npm run compresscss"
   },
   "repository": {
     "type": "git",
@@ -34,9 +34,6 @@
   },
   "homepage": "https://terrabrasilis.dpi.inpe.br",
   "dependencies": {
-    "esri-leaflet-geocoder": "^2.2.13",
-    "rimraf": "^3.0.0",
-    "uglify-js": "^2.7.4",
-    "uglifycss": "^0.0.25"
+    "esri-leaflet-geocoder": "^2.2.13"
   }
 }

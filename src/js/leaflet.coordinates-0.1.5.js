@@ -1,3 +1,61 @@
+L.NumberFormatter = {
+  round: function (num, dec, sep) {
+    var res = L.Util.formatNum(num, dec) + ''
+    var numbers = res.split('.')
+    if (numbers[1]) {
+      var d = dec - numbers[1].length
+      for (; d > 0; d--) {
+        numbers[1] += '0'
+      }
+      res = numbers.join(sep || '.')
+    }
+    return res
+  },
+
+  toDMS: function (deg) {
+    var d = Math.floor(Math.abs(deg))
+    var minfloat = (Math.abs(deg) - d) * 60
+    var m = Math.floor(minfloat)
+    var secfloat = (minfloat - m) * 60
+    var s = Math.round(secfloat)
+    if (s == 60) {
+      m++
+      s = '00'
+    }
+    if (m == 60) {
+      d++
+      m = '00'
+    }
+    if (s < 10) {
+      s = '0' + s
+    }
+    if (m < 10) {
+      m = '0' + m
+    }
+    var dir = ''
+    if (deg < 0) {
+      dir = '-'
+    }
+    return ('' + dir + d + '&deg; ' + m + "' " + s + "''")
+  },
+
+  createValidNumber: function (num, sep) {
+    if (num && num.length > 0) {
+      var numbers = num.split(sep || '.')
+      try {
+        var numRes = Number(numbers.join('.'))
+        if (isNaN(numRes)) {
+          return undefined
+        }
+        return numRes
+      } catch (e) {
+        return undefined
+      }
+    }
+    return undefined
+  }
+}
+
 /*
  * L.Control.Coordinates is used for displaying current mouse coordinates on the map.
  */
@@ -76,8 +134,8 @@ L.Control.Coordinates = L.Control.extend({
   },
 
   /**
-	 *	Creates an input HTML element in given container with given classname
-	 */
+   *  Creates an input HTML element in given container with given classname
+   */
   _createInput: function (classname, container) {
     var input = L.DomUtil.create('input', classname, container)
     input.type = 'text'
@@ -90,8 +148,8 @@ L.Control.Coordinates = L.Control.extend({
   },
 
   /**
-	 *	Called onkeyup of input fields
-	 */
+   *  Called onkeyup of input fields
+   */
   _handleKeypress: function (e) {
     switch (e.keyCode) {
       case 27: // Esc
@@ -108,8 +166,8 @@ L.Control.Coordinates = L.Control.extend({
   },
 
   /**
-	 *	Called on each keyup except ESC
-	 */
+   *  Called on each keyup except ESC
+   */
   _handleSubmit: function () {
     var x = L.NumberFormatter.createValidNumber(this._inputX.value, this.options.decimalSeperator)
     var y = L.NumberFormatter.createValidNumber(this._inputY.value, this.options.decimalSeperator)
@@ -129,8 +187,8 @@ L.Control.Coordinates = L.Control.extend({
   },
 
   /**
-	 *	Shows inputs fields
-	 */
+   *  Shows inputs fields
+   */
   expand: function () {
     this._showsCoordinates = false
 
@@ -144,11 +202,12 @@ L.Control.Coordinates = L.Control.extend({
   },
 
   /**
-	 *	Creates the label according to given options and formatters
-	 */
+   *  Creates the label according to given options and formatters
+   */
   _createCoordinateLabel: function (ll) {
     var opts = this.options
-    var x; var y
+    var x
+    var y
     if (opts.customLabelFcn) {
       return opts.customLabelFcn(ll, opts)
     }
@@ -173,8 +232,8 @@ L.Control.Coordinates = L.Control.extend({
   },
 
   /**
-	 *	Returns a Number according to options (DMS or decimal)
-	 */
+   *  Returns a Number according to options (DMS or decimal)
+   */
   _getNumber: function (n, opts) {
     var res
     if (opts.useDMS) {
@@ -186,9 +245,9 @@ L.Control.Coordinates = L.Control.extend({
   },
 
   /**
-	 *	Shows coordinate labels after user input has ended. Also
-	 *	displays a marker with popup at the last input position.
-	 */
+   *  Shows coordinate labels after user input has ended. Also
+   *  displays a marker with popup at the last input position.
+   */
   collapse: function () {
     if (!this._showsCoordinates) {
       this._map.on('mousemove', this._update, this)
@@ -232,8 +291,8 @@ L.Control.Coordinates = L.Control.extend({
   },
 
   /**
-	 *	Click callback for UI
-	 */
+   *  Click callback for UI
+   */
   _switchUI: function (evt) {
     L.DomEvent.stop(evt)
     L.DomEvent.stopPropagation(evt)
@@ -252,8 +311,8 @@ L.Control.Coordinates = L.Control.extend({
   },
 
   /**
-	 *	Mousemove callback function updating labels and input elements
-	 */
+   *  Mousemove callback function updating labels and input elements
+   */
   _update: function (evt) {
     var pos = evt.latlng
     var opts = this.options
@@ -288,3 +347,60 @@ L.Map.addInitHook(function () {
     this.addControl(this.coordinateControl)
   }
 })
+L.NumberFormatter = {
+  round: function (num, dec, sep) {
+    var res = L.Util.formatNum(num, dec) + ''
+    var numbers = res.split('.')
+    if (numbers[1]) {
+      var d = dec - numbers[1].length
+      for (; d > 0; d--) {
+        numbers[1] += '0'
+      }
+      res = numbers.join(sep || '.')
+    }
+    return res
+  },
+
+  toDMS: function (deg) {
+    var d = Math.floor(Math.abs(deg))
+    var minfloat = (Math.abs(deg) - d) * 60
+    var m = Math.floor(minfloat)
+    var secfloat = (minfloat - m) * 60
+    var s = Math.round(secfloat)
+    if (s == 60) {
+      m++
+      s = '00'
+    }
+    if (m == 60) {
+      d++
+      m = '00'
+    }
+    if (s < 10) {
+      s = '0' + s
+    }
+    if (m < 10) {
+      m = '0' + m
+    }
+    var dir = ''
+    if (deg < 0) {
+      dir = '-'
+    }
+    return ('' + dir + d + '&deg; ' + m + "' " + s + "''")
+  },
+
+  createValidNumber: function (num, sep) {
+    if (num && num.length > 0) {
+      var numbers = num.split(sep || '.')
+      try {
+        var numRes = Number(numbers.join('.'))
+        if (isNaN(numRes)) {
+          return undefined
+        }
+        return numRes
+      } catch (e) {
+        return undefined
+      }
+    }
+    return undefined
+  }
+}
