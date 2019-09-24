@@ -160,7 +160,7 @@ L.Control.Coordinates = L.Control.extend({
         this.collapse()
         break
       default: // All keys
-        this._handleSubmit()
+        // this._handleSubmit()
         break
     }
   },
