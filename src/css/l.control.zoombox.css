@@ -1,20 +1,45 @@
-.leaflet-zoom-box-control {
-    font-size: 18px;
+/*
+ * BOXZOOM
+ */
+.leaflet-control-boxzoom {
+    background-color:white;
+    border-radius:4px;
+    border:1px solid #cccccc;
+    width:25px;
+    height:25px;
+    line-height:25px;
+    box-shadow:0 1px 2px rgba(0,0,0,0.65);
+    cursor:pointer !important;
 }
-.leaflet-zoom-box-crosshair {
-    cursor: crosshair !important;
-}
-.leaflet-zoom-box-icon {
-    background: transparent no-repeat center center;
-    /*src: https://design.google.com/icons/#ic_crop_free*/
-    background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPiAgICA8cGF0aCBkPSJNMyA1djRoMlY1aDRWM0g1Yy0xLjEgMC0yIC45LTIgMnptMiAxMEgzdjRjMCAxLjEuOSAyIDIgMmg0di0ySDV2LTR6bTE0IDRoLTR2Mmg0YzEuMSAwIDItLjkgMi0ydi00aC0ydjR6bTAtMTZoLTR2Mmg0djRoMlY1YzAtMS4xLS45LTItMi0yeiIvPjwvc3ZnPg==);
-}
-.leaflet-zoom-box-icon.active {
-    color: #FFF;
-    background-color: #CCC;
-    /*src: https://design.google.com/icons/#ic_center_focus_strong*/
+
+.with-background-image {
     background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPiAgICA8cGF0aCBkPSJNMTIgOGMtMi4yMSAwLTQgMS43OS00IDRzMS43OSA0IDQgNCA0LTEuNzkgNC00LTEuNzktNC00LTR6bS03IDdIM3Y0YzAgMS4xLjkgMiAyIDJoNHYtMkg1di00ek01IDVoNFYzSDVjLTEuMSAwLTIgLjktMiAydjRoMlY1em0xNC0yaC00djJoNHY0aDJWNWMwLTEuMS0uOS0yLTItMnptMCAxNmgtNHYyaDRjMS4xIDAgMi0uOSAyLTJ2LTRoLTJ2NHoiLz48L3N2Zz4=);
+    background-repeat:no-repeat;
+    background-size:21px 21px; /* 25px image, 25px box; subtract 2px for padding on every side = 21px rendering height */
+    background-position:2px 2px;
 }
-.leaflet-zoom-box-icon.leaflet-disabled{
-    background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjQkJCQkJCIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPiAgICA8cGF0aCBkPSJNMyA1djRoMlY1aDRWM0g1Yy0xLjEgMC0yIC45LTIgMnptMiAxMEgzdjRjMCAxLjEuOSAyIDIgMmg0di0ySDV2LTR6bTE0IDRoLTR2Mmg0YzEuMSAwIDItLjkgMi0ydi00aC0ydjR6bTAtMTZoLTR2Mmg0djRoMlY1YzAtMS4xLS45LTItMi0yeiIvPjwvc3ZnPg==);
+
+.leaflet-control-boxzoom.leaflet-control-boxzoom-active {
+    background-color:#aaaaaa;
+}
+
+.leaflet-container.leaflet-control-boxzoom-active {
+    cursor:crosshair !important;
+}
+
+.leaflet-control-boxzoom i {
+    display:block;
+}
+
+.leaflet-control-boxzoom i.icon {
+    font-size:17px;
+    margin-left:1px;
+    margin-top:3px;
+}
+
+.leaflet-control-boxzoom i.fa {
+    margin-top:6px;
+}
+.leaflet-control-boxzoom i.glyphicon {
+    margin-top:5px;
 }
