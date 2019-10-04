@@ -35,5 +35,10 @@
   "homepage": "https://terrabrasilis.dpi.inpe.br",
   "dependencies": {
     "esri-leaflet-geocoder": "^2.2.13"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.0",
+    "uglify-js": "^3.6.0",
+    "uglifycss": "0.0.29"
   }
 }
