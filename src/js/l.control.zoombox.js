@@ -8,7 +8,7 @@ L.Control.BoxZoom = L.Control.extend({
     position: 'topright',
     title: 'Click here then draw a square on the map, to zoom in to an area',
     aspectRatio: null,
-    divClasses: 'leaflet-control-boxzoom leaflet-bar leaflet-control',
+    divClasses: 'leaflet-control-zoombox leaflet-bar leaflet-control',
     enableShiftDrag: false,
     iconClasses: '',
     keepOn: false
