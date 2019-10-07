@@ -1,6 +1,6 @@
 .leaflet-control-zoombox a {
-    background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAA0CAYAAACU7CiIAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACoSURBVFiF7ZZhDoAgCIWxdbF3suxkHM3+1FaOmNqyIr6fiHuJTyKklKgHQxcVF7rCKAUBiA5h5tCSR/T0iTakL9PWz05IZNEM3YSCt6BvCgFI2ps4Q9v3k9Ldgdrr8nrX9LYc7wwu5EIu9KCQT6rq+r8mVbV0ewBEIpqy8MzMsWR/8f+oxmES9u7olZPqLKQeYtqkWuy61V2xND/H3h35pNqMPTPYE1oAnZZStKN8jj8AAAAASUVORK5CYII=) no-repeat 0 0;
-    /* background-size:26px 52px; */
+    background: #fff url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAAA6ElEQVR4Ae2VrRWDMBRGr4jsAJUVFQxQiegODBJRiWCEJxGMUMlQDIBEtK6HfCc84OB6uLHJze/7wg5OnjTSCpRC+/BEoeGTNCOHSa/GEYlGsT0iw8O2i+JRkaoObM14iyqvMcwTGRB+qpqUQJucoS2JDGCmGrkzp2SSq7CcqEjm7hkpUSomWh3lc+FBjpLAyd8TuJHjzipX5nQMFCglI7WOUhqilOYgq3owSjnHpaKNSYV3BHntfZIM0YuRiDkpGWYhE/dntqqOZ7aq1kUVHq/toslRxR1bU5VqfJF+2TUXlKv/ZfucfAHv++jcd4DdXwAAAABJRU5ErkJggg==) no-repeat 0 0;
+    background-size:26px 24px;
 }
 
 .leaflet-touch .leaflet-control-zoombox a {
