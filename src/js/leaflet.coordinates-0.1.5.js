@@ -121,6 +121,7 @@ L.Control.Coordinates = L.Control.extend({
     // connect to mouseevents
     map.on('mousemove', this._update, this)
     map.on('dragstart', this.collapse, this)
+    map.on('click', this.collapse, this)
 
     map.whenReady(this._update, this)
 
