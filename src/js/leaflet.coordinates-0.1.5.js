@@ -96,10 +96,13 @@ L.Control.Coordinates = L.Control.extend({
 
     // label containers
     this._labelcontainer = L.DomUtil.create('div', 'uiElement label', container)
+    this._searchButton = L.DomUtil.create('button', 'uiElement btn btn-sm btn-outline-success', this._labelcontainer)
+    L.DomUtil.create('i', 'fa fa-search', this._searchButton)
     this._label = L.DomUtil.create('span', 'labelFirst', this._labelcontainer)
 
-    // input containers
+      // input containers
     this._inputcontainer = L.DomUtil.create('div', 'uiElement input uiHidden', container)
+
     var xSpan, ySpan
     if (options.useLatLngOrder) {
       ySpan = L.DomUtil.create('span', '', this._inputcontainer)
@@ -199,6 +202,7 @@ L.Control.Coordinates = L.Control.extend({
     L.DomEvent.removeListener(this._container, 'click', this._switchUI, this)
 
     L.DomUtil.addClass(this._labelcontainer, 'uiHidden')
+    L.DomUtil.addClass(this._searchButton, 'uiHidden')
     L.DomUtil.removeClass(this._inputcontainer, 'uiHidden')
   },
 
@@ -259,6 +263,7 @@ L.Control.Coordinates = L.Control.extend({
 
       L.DomUtil.addClass(this._inputcontainer, 'uiHidden')
       L.DomUtil.removeClass(this._labelcontainer, 'uiHidden')
+      L.DomUtil.removeClass(this._searchButton, 'uiHidden')
 
       if (this._marker) {
         var m = this._createNewMarker()
